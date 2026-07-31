@@ -1,0 +1,17 @@
+[project]
+name = "repro-fvso2kgvrf"
+version = "0.1.0"
+description = "Reproduction of 'Explanations are a Means to an End: Decision Theoretic Explanation Evaluation' (arXiv:2506.22740, OpenReview fVso2kGVrF)"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "scikit-learn>=1.5",
+    "xgboost>=2.1",
+    "shap>=0.46",
+    "scipy>=1.14",
+    "statsmodels>=0.14",
+    "numba>=0.60",
+    "llvmlite>=0.43",
+    "sympy>=1.13",
+]
