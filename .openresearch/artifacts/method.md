@@ -7,7 +7,8 @@ committed code; no env-var switches.
 ## Claims 1, 2, 5 — Ames case study (`src/claim156_ames.py`)
 
 Pipeline per seed (100 independent 80/20 splits, exactly Appendix B):
-1. De Cock Ames (2930 rows; 2929 after dropna on the five used columns).
+1. De Cock Ames (2,930 rows; the five used columns are complete, so no rows
+   are dropped).
 2. XGBoost (defaults, `random_state=0`, `n_jobs=1`) predicting the
    overall-condition score from {year built, bedrooms, exterior material};
    SHAP `TreeExplainer` values = Z.

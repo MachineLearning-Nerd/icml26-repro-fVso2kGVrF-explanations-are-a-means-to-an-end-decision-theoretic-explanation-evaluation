@@ -176,7 +176,8 @@ def main():
         no_gain = bool(chi < 1.0)  # upper CI bound: no material improvement
         prop4[f"{a}_vs_{b}"] = {"mean": round(mean, 2),
                                 "ci": [round(clo, 2), round(chi, 2)],
-                                "no_additional_value": no_gain}
+                                "no_additional_value": no_gain,
+                                "per_seed": [round(v, 4) for v in d]}
         print(f"  {label}: mean {mean:5.2f}%  CI [{clo:5.2f}, {chi:5.2f}]  "
               f"no additional value (upper CI < 1%): {no_gain}")
     out["prop4_empirical"] = prop4
@@ -187,9 +188,12 @@ def main():
                          ("ridge", "wmed"), ("knn", "wmed")]:
         rs = [one_seed(X, price, cond, s, agent=agent, prior=prior)
               for s in range(N_SEEDS_SENS)]
-        tv = float(np.mean([rel(m, "X", "prior") for m in rs]))
-        pv = float(np.mean([rel(m, "HX", "H") for m in rs]))
-        sens[f"{agent}/{prior}"] = {"tve": round(tv, 2), "phcv": round(pv, 2)}
+        tvs = [rel(m, "X", "prior") for m in rs]
+        pvs = [rel(m, "HX", "H") for m in rs]
+        tv, pv = float(np.mean(tvs)), float(np.mean(pvs))
+        sens[f"{agent}/{prior}"] = {"tve": round(tv, 2), "phcv": round(pv, 2),
+                                    "tve_per_seed": [round(v, 4) for v in tvs],
+                                    "phcv_per_seed": [round(v, 4) for v in pvs]}
         print(f"  agent={agent:6s} prior={prior:7s}: TVE {tv:6.2f}%  PHCV {pv:6.2f}%")
     # absolute percentage-point reading, for the interpretation audit
     tv_pp = float(np.mean([100 * (m["prior"] - m["X"]) for m in runs]))

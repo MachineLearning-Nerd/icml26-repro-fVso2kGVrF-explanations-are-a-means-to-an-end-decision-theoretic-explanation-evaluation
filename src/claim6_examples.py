@@ -51,6 +51,15 @@ def example1():
     grid = [Fraction(k, 100) for k in range(101)]
     rule_ok = all((best_action(q)[0] == 1) == (q > threshold) for q in grid)
 
+    # negative control: with the wrong utility (biopsy costs swapped:
+    # u(1,0) = -10, u(0,.) = -100) the 9/10 threshold must NOT hold.
+    def best_action_wrong(q):
+        eu1 = q * Fraction(0) + (1 - q) * Fraction(-10)
+        return 1 if eu1 > Fraction(-100) else 0
+
+    wrong_fails = not all((best_action_wrong(q) == 1) == (q > threshold)
+                          for q in grid)
+
     # value of information of a diagnostic signal (sensitivity 0.9,
     # specificity 0.95) at prior pi = 1/2, exact rational arithmetic
     pi = Fraction(1, 2)
@@ -65,6 +74,7 @@ def example1():
         R_signal += p_t * best_action(q)[1]
     voi = R_signal - R_prior
     return {"rule_matches_threshold_9_10": rule_ok,
+            "wrong_utility_rule_fails": wrong_fails,
             "R_prior": str(R_prior), "R_signal": str(R_signal),
             "value_of_information": str(voi),
             "voi_float": round(float(voi), 4)}
@@ -145,6 +155,8 @@ def main():
     print("== Example 1 (medical treatment / biopsy), exact rational arithmetic ==")
     print(f"  rational rule == 'biopsy iff q > 9/10' on 101-point exact belief grid: "
           f"{'PASS' if e1['rule_matches_threshold_9_10'] else 'FAIL'}")
+    print(f"  negative control (swapped biopsy costs): 9/10 rule breaks as expected: "
+          f"{'PASS' if e1['wrong_utility_rule_fails'] else 'FAIL'}")
     print(f"  R_prior = {e1['R_prior']}, R_signal = {e1['R_signal']}, "
           f"value of information = {e1['value_of_information']} "
           f"(= {e1['voi_float']})")

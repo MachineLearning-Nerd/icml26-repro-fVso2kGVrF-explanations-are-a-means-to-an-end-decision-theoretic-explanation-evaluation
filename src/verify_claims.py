@@ -5,7 +5,13 @@ import json
 import sys
 from pathlib import Path
 
-ART = Path(__file__).resolve().parents[1] / ".openresearch" / "artifacts"
+_ROOT = Path(__file__).resolve().parents[1]
+# repo layout keeps artifacts under .openresearch/; the Space mirror ships the
+# same files under repro/artifacts — support both so the shipped checker runs
+# against the shipped artifacts out of the box.
+ART = next(p for p in (_ROOT / ".openresearch" / "artifacts",
+                       _ROOT / "artifacts")
+           if (p / "claim156_ames.json").exists())
 
 failures = []
 
@@ -53,10 +59,14 @@ def main():
           e["example1"]["rule_matches_threshold_9_10"])
     check("Example 1 value of information > 0",
           e["example1"]["voi_float"] > 0)
+    check("Example 1 negative control: wrong utility breaks the 9/10 rule",
+          e["example1"]["wrong_utility_rule_fails"])
     check(f"Example 2 lender model acc {e['example2']['model_test_acc']} > 0.65",
           e["example2"]["model_test_acc"] > 0.65)
     check(f"Example 2 has denied applicants ({e['example2']['n_denied']})",
           e["example2"]["n_denied"] > 0)
+    check(f"Example 2 explanation gain {e['example2']['explanation_gain']} > 0",
+          e["example2"]["explanation_gain"] > 0)
 
     print("== Claim 3 (Definition 8, real controlled study) ==")
     b = json.loads((ART / "claim3_behavioral.json").read_text())

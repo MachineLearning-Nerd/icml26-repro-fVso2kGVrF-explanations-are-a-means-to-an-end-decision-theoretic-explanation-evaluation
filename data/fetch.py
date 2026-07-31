@@ -29,7 +29,7 @@ SOURCES = {
     # UCI Statlog German Credit (for Example 2, recourse provision).
     "german.data": (
         "https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/german.data",
-        None,  # pinned after first fetch; see german_sha256.txt
+        "b21f3d81db8071257d5ff1deaeba1fd4303b62712e6fcc9715c7a86202cb5871",
     ),
 }
 
@@ -47,13 +47,6 @@ def fetch(name: str) -> Path:
         req = urllib.request.Request(url, headers=UA)
         dest.write_bytes(urllib.request.urlopen(req, timeout=120).read())
     got = sha256(dest)
-    if want is None:
-        pin = DATA_DIR / f"{name}.sha256"
-        if pin.exists():
-            want = pin.read_text().strip()
-        else:
-            pin.write_text(got + "\n")
-            want = got
     if got != want:
         sys.exit(f"FATAL: {name} sha256 {got} != pinned {want}")
     return dest
