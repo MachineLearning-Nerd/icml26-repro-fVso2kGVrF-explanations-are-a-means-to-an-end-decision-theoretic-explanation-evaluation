@@ -1,0 +1,27 @@
+{
+ "n_decisions": 9980,
+ "n_workers": 998,
+ "abs_err": {
+  "delta": -7.171,
+  "ci": [
+   -16.504,
+   2.162
+  ],
+  "significant": false
+ },
+ "ape": {
+  "delta": -0.779,
+  "ci": [
+   -1.651,
+   0.093
+  ],
+  "significant": false
+ },
+ "placebo": {
+  "delta": -0.042,
+  "ci": [
+   -0.776,
+   0.693
+  ]
+ }
+}
