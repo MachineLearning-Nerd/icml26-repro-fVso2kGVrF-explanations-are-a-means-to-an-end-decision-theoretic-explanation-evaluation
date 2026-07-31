@@ -1,0 +1,69 @@
+{
+ "schema_version": 1,
+ "title": "Reproduction: Explanations are a Means to an End: Decision Theoretic Explanation Evaluation",
+ "emoji": "\ud83c\udfaf",
+ "space_id": "DineshAI/fVso2kGVrF",
+ "paper": null,
+ "tags": [
+  "icml2026-repro",
+  "paper-fVso2kGVrF"
+ ],
+ "updated_at": "2026-07-31T12:45:00+00:00",
+ "root": {
+  "slug": "index",
+  "title": "Reproduction: Explanations are a Means to an End: Decision Theoretic Explanation Evaluation",
+  "file": "pages/index.md",
+  "children": [
+   {
+    "slug": "executive-summary",
+    "title": "Executive summary",
+    "file": "pages/executive-summary/page.md",
+    "children": []
+   },
+   {
+    "slug": "claim-1",
+    "title": "Claim 1: Theoretic Value of Explanation (Definition 6)",
+    "file": "pages/claim-1/page.md",
+    "children": []
+   },
+   {
+    "slug": "claim-2",
+    "title": "Claim 2: Potential Human-Complementary Value (Definition 7)",
+    "file": "pages/claim-2/page.md",
+    "children": []
+   },
+   {
+    "slug": "claim-3",
+    "title": "Claim 3: Behavioral Value of Explanation (Definition 8)",
+    "file": "pages/claim-3/page.md",
+    "children": []
+   },
+   {
+    "slug": "claim-4",
+    "title": "Claim 4: Proposition 4 \u2014 explanations are garblings",
+    "file": "pages/claim-4/page.md",
+    "children": []
+   },
+   {
+    "slug": "claim-5",
+    "title": "Claim 5: Ames Iowa housing case study (Section B)",
+    "file": "pages/claim-5/page.md",
+    "children": []
+   },
+   {
+    "slug": "claim-6",
+    "title": "Claim 6: Decision-problem framework, Examples 1\u20132",
+    "file": "pages/claim-6/page.md",
+    "children": []
+   },
+   {
+    "slug": "conclusion",
+    "title": "Conclusion",
+    "file": "pages/conclusion/page.md",
+    "children": []
+   }
+  ]
+ },
+ "agent_view_tokens": 1025,
+ "revision": "1785475277440111797"
+}

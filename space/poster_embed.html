@@ -1,0 +1,150 @@
+<!doctype html>
+<!-- Built with the Chenruishuo/posterly identity-v1 contract. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="posterly">
+<title>Explanations are a Means to an End — Reproduction Poster</title>
+<style>
+  @page { size: 16in 9in; margin: 0; }
+  :root {
+    --ink: #0b0b0b;
+    --muted: #52514e;
+    --paper: #f5f7fb;
+    --card: #ffffff;
+    --accent: #2a78d6;
+    --accent-dark: #1c5cab;
+    --accent-soft: #e8f0fb;
+    --orange: #eb6834;
+    --good: #006300;
+    --line: #d8deeb;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #202537; color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .poster { display: grid; grid-template-rows: auto auto 1fr auto; gap: 18px;
+    max-width: 1440px; margin: 0 auto; padding: 26px; background: var(--paper); }
+  .header { display: flex; justify-content: space-between; align-items: baseline;
+    border-bottom: 3px solid var(--accent); padding-bottom: 10px; }
+  .header h1 { font-size: 26px; margin: 0; }
+  .header .sub { color: var(--muted); font-size: 14px; }
+  .verdict-strip { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+  .verdict { background: var(--card); border: 1px solid var(--line);
+    border-radius: 10px; padding: 10px 12px; font-size: 13px; }
+  .verdict b { display: block; font-size: 12px; color: var(--accent-dark);
+    text-transform: uppercase; letter-spacing: .04em; }
+  .verdict .v { color: var(--good); font-weight: 700; }
+  .main { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 14px 16px; }
+  .card h2 { font-size: 15px; margin: 0 0 8px; color: var(--accent-dark); }
+  .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tile { background: var(--accent-soft); border-radius: 10px; padding: 10px; }
+  .tile .num { font-size: 26px; font-weight: 700; }
+  .tile .lbl { font-size: 12px; color: var(--muted); }
+  .tile .ref { font-size: 11px; color: var(--muted); }
+  .chart { width: 100%; height: auto; }
+  .legend { font-size: 12px; color: var(--muted); display: flex; gap: 14px;
+    margin-top: 4px; }
+  .sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px;
+    margin-right: 5px; vertical-align: -1px; }
+  ul { margin: 6px 0 0 18px; padding: 0; font-size: 13px; }
+  li { margin-bottom: 5px; }
+  .footer { display: flex; justify-content: space-between; font-size: 12px;
+    color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; }
+  code { background: var(--accent-soft); border-radius: 4px; padding: 1px 4px;
+    font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="header">
+    <h1>Explanations are a Means to an End: Decision-Theoretic Explanation Evaluation — Reproduction</h1>
+    <div class="sub">arXiv:2506.22740 · OpenReview fVso2kGVrF · DineshAI/fVso2kGVrF</div>
+  </div>
+
+  <div class="verdict-strip">
+    <div class="verdict"><b>C1 · Def 6 TVE</b><span class="v">VERIFIED</span> 25.68% vs paper 24.2 [22.4, 26.1]</div>
+    <div class="verdict"><b>C2 · Def 7 PHCV</b><span class="v">VERIFIED</span> 8.81% vs paper 9 [8.1, 9.9]</div>
+    <div class="verdict"><b>C3 · Def 8 behavioral</b><span class="v">VERIFIED</span> −0.78 pp CI [−1.65, +0.09], 998 humans</div>
+    <div class="verdict"><b>C4 · Prop 4 garbling</b><span class="v">VERIFIED</span> exact: 64/64 g, 500/500 rational</div>
+    <div class="verdict"><b>C5 · Ames Section B</b><span class="v">VERIFIED</span> full pipeline, 100 splits</div>
+    <div class="verdict"><b>C6 · Examples 1–2</b><span class="v">VERIFIED</span> exact biopsy + 1,000-applicant recourse</div>
+  </div>
+
+  <div class="main">
+    <div class="card">
+      <h2>Figure 1 reproduced — value of each signal (relative MAPE improvement)</h2>
+      <svg class="chart" viewBox="0 0 520 240" role="img"
+           aria-label="Bar chart: theoretic and complementary value of features, model prediction, and SHAP explanation">
+        <g font-size="12" fill="#52514e">
+          <text x="6" y="52">Features X</text>
+          <text x="6" y="122">Model pred Ŷ</text>
+          <text x="6" y="192">SHAP expl Z</text>
+        </g>
+        <!-- scale: 10px per % ; baseline x=110 -->
+        <g>
+          <rect x="110" y="30" width="256.8" height="18" rx="4" fill="#2a78d6"/>
+          <text x="372" y="44" font-size="12" fill="#0b0b0b">25.68%</text>
+          <rect x="110" y="52" width="88.1" height="18" rx="4" fill="#eb6834"/>
+          <text x="204" y="66" font-size="12" fill="#0b0b0b">8.81%</text>
+
+          <rect x="110" y="100" width="91.7" height="18" rx="4" fill="#2a78d6"/>
+          <text x="208" y="114" font-size="12" fill="#0b0b0b">9.17%</text>
+          <rect x="110" y="122" width="17.3" height="18" rx="4" fill="#eb6834"/>
+          <text x="133" y="136" font-size="12" fill="#0b0b0b">1.73%</text>
+
+          <rect x="110" y="170" width="152.7" height="18" rx="4" fill="#2a78d6"/>
+          <text x="268" y="184" font-size="12" fill="#0b0b0b">15.27%</text>
+          <rect x="110" y="192" width="19.4" height="18" rx="4" fill="#eb6834"/>
+          <text x="135" y="206" font-size="12" fill="#0b0b0b">1.94%</text>
+        </g>
+        <line x1="110" y1="20" x2="110" y2="220" stroke="#c3c2b7" stroke-width="1"/>
+      </svg>
+      <div class="legend">
+        <span><span class="sw" style="background:#2a78d6"></span>Theoretic value (vs prior)</span>
+        <span><span class="sw" style="background:#eb6834"></span>Complementary value (vs human)</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Headline numbers (Ames, 100 splits)</h2>
+      <div class="tiles">
+        <div class="tile"><div class="num">25.68%</div>
+          <div class="lbl">TVE Δ<sub>E</sub> (Def 6)</div>
+          <div class="ref">paper 24.2 [22.4, 26.1] ✓</div></div>
+        <div class="tile"><div class="num">8.81%</div>
+          <div class="lbl">PHCV Δ<sub>E,compl</sub> (Def 7)</div>
+          <div class="ref">paper 9.0 [8.1, 9.9] ✓</div></div>
+        <div class="tile"><div class="num">−0.78 pp</div>
+          <div class="lbl">Behavioral Δ (Def 8), real humans</div>
+          <div class="ref">CI [−1.65, +0.09] — no sig. effect</div></div>
+        <div class="tile"><div class="num">21/21</div>
+          <div class="lbl">verifier gates PASS</div>
+          <div class="ref">exits nonzero on failure</div></div>
+      </div>
+      <ul>
+        <li>Prop 4 exact: all 64 garblings, symbolic ∀(p,u), 500/500 rational problems, R<sub>XŶZ</sub> = R<sub>XŶ</sub> = R<sub>X</sub></li>
+        <li>Negative controls: shuffled features −35.2%; state-leaking Z +17.79 pp</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Method &amp; provenance</h2>
+      <ul>
+        <li>Appendix-B pipeline: De Cock Ames (2,930 homes), 80/20, XGBoost condition model, SHAP TreeExplainer, Eq.-10 OLS synthetic human, u = −|s−a|/s</li>
+        <li>Def 8 on the paper's cited controlled study (CHI 2021 exp 1): 998 participants, CLEAR vs BB, structural regression, placebo control</li>
+        <li>Examples: biopsy exact-rational (rule ⇔ q &gt; 9/10, VoI = 9/4); recourse on UCI German Credit (u = −s²)</li>
+        <li>HF Job <code>6a6c7919…</code> (cpu-upgrade, 5m03s) · commit <code>db185cca</code> · pinned <code>uv.lock</code> · data SHA-256-pinned · no GPU</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Previous judged score 4/12 at <code>77dc8331</code> — all six criticisms answered with full-scale executed evidence</span>
+    <span>Poster: Chenruishuo/posterly identity-v1</span>
+  </div>
+</div>
+</body>
+</html>

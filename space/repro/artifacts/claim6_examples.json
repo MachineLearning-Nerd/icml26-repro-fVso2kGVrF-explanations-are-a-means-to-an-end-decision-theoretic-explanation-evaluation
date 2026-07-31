@@ -1,0 +1,18 @@
+{
+ "example1": {
+  "rule_matches_threshold_9_10": true,
+  "wrong_utility_rule_fails": true,
+  "R_prior": "-10",
+  "R_signal": "-31/4",
+  "value_of_information": "9/4",
+  "voi_float": 2.25
+ },
+ "example2": {
+  "n_applicants": 1000,
+  "model_test_acc": 0.8,
+  "n_denied": 68,
+  "E_utility_with_explanation": -0.00824,
+  "E_utility_without_explanation": -0.01076,
+  "explanation_gain": 0.00253
+ }
+}
